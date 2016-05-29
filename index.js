@@ -43,14 +43,14 @@ app.post('/webhook/', function (req, res) {
     if (event.message && event.message.text) {
       var text = event.message.text.split(' ');
           if (text[0] === 'sum') {
-            var ans = parseInt(text[1], 0) + parseInt(text[2], 0)
-            sendTextMessage(sender, ans)
+            var answer = parseInt(text[1], 0) + parseInt(text[2], 0)
+            sendTextMessage(sender, answer)
           } else if (text[0] === 'max') {
-            ans = parseInt(text[1], 0) > parseInt(text[2], 0) ? parseInt(text[1], 0) : parseInt(text[2], 0)
-            sendTextMessage(sender, ans)
+            answer = parseInt(text[1], 0) > parseInt(text[2], 0) ? parseInt(text[1], 0) : parseInt(text[2], 0)
+            sendTextMessage(sender, answer)
           } else if (text[0] === 'min') {
-            ans = parseInt(text[1], 0) < parseInt(text[2], 0) ? parseInt(text[1], 0) : parseInt(text[2], 0)
-            sendTextMessage(sender, ans)
+            answer = parseInt(text[1], 0) < parseInt(text[2], 0) ? parseInt(text[1], 0) : parseInt(text[2], 0)
+            sendTextMessage(sender, answer)
   }
 }
   res.sendStatus(200);
