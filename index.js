@@ -2,7 +2,7 @@ var express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
 var request = require('request')
-var token = "CAAaLBQ6VwmkBAIW4XUPhO78uzFgkSrews47SyJHK1q6c5ovXpWepHPtErdP5pQzUN8Mj9N0GtQoEjM9Nqep2vFkZAI663Qm2fhlVTUIv3WzJg3c1PniiwiGJekLCJz0YjsyTGVoO2eHNVi2VEgkOXJqi3SB4l2tr4L5PnfAjJI30my8OoyfsiYaAECQMZD";
+var token = "EAAFQqZC2G8fEBAGZCfOmfhAt3UhrgOMIfQXwUCZBZChkQiPVBpmgfRVaNxUA2VqYVaNEy1NbdiCZAQgH8urwZAgrmwLIEy8wS3ZATk2zSK1x8KoUsotHajDHyZBZAFK9TcjbQVwvfEivVZAeZA9ayp4ze1ifaYyDtaNrGDlwEsdH0BD6AZDZD";
 function sendTextMessage(sender, text) {
   messageData = {
     text:text
@@ -29,7 +29,7 @@ app.get('/',function(req,res){
   res.send('Hello World');
 })
 app.get('/webhook', function (req, res) {
-  if (req.query['hub.verify_token'] === '1234') {
+  if (req.query['hub.verify_token'] === 'bot_check') {
     res.send(req.query['hub.challenge']);
   } else {
     res.send('Error, wrong validation token');
